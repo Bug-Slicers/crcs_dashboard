@@ -116,9 +116,7 @@ module.exports.society_signup = async (req, res) => {
 
 module.exports.getRegisteredSocieties = async (req, res) => {
   try {
-    const societies = await Society.find({ is_approved: true }).populate(
-      "society_id"
-    );
+    const societies = await Society.find({ is_approved: true });
 
     const modifiedSocieties = await Promise.all(
       societies.map(async (society) => {
