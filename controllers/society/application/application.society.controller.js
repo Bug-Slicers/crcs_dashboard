@@ -101,7 +101,9 @@ module.exports.getApplicationBySocietyId = async (req, res) => {
   try {
     const id = req.Society._id;
     console.log(id);
-    const data = await Application.find({ society_id: id });
+    const data = await Application.find({ society_id: id }).populate(
+      "society_id"
+    );
 
     res.status(200).json({
       success: true,
