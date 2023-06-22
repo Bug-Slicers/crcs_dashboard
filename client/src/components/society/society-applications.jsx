@@ -26,6 +26,7 @@ const SocietyApplications = () => {
       }
       const data = await response.json();
       setData(data.data);
+      console.log(data);
       setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);

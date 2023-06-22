@@ -20,7 +20,7 @@ const router = Router();
 router.post("/logout", (req, res) => {
   res
     .clearCookie("jwt")
-    .status(204)
+    .status(200)
     .json({ message: "Logged out successfully" });
 });
 

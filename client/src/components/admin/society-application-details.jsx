@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { url } from "../../assets/proxy";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,7 @@ const SocietiyApplicationDetails = () => {
   const [applicationData, setApplicationData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
   const fetchApplicationData = async () => {
     try {
       setIsLoading(true);
